@@ -17,9 +17,9 @@ Struktur Folder
 src/
 └── jamusehat/
     ├── app/
-    │   └── Main.java 
+    │   └── Main.java       # Logic utama
     └── model/
-        ├── User.java
-        ├── Admin.java
-        ├── Pelanggan.java
-        └── Jamu.java
+        ├── User.java       # Superclass
+        ├── Admin.java      # Subclass Admin
+        ├── Pelanggan.java  # Subclass Pelanggan
+        └── Jamu.java       # Data produk jamu
