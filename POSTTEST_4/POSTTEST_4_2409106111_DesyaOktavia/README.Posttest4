@@ -1,0 +1,43 @@
+Laporan Praktikum Pemrograman Berorientasi Objek - Modul 5
+Nama: Desya Oktavia Rumondor
+NIM: 2409106111
+Mata Kuliah: Pemrograman Berorientasi Objek
+Topik: Implementasi Dynamic Polymorphism pada Sistem Toko Jamu Sehat
+
+1. Deskripsi Tugas
+Melanjutkan pengembangan proyek sistem Toko Jamu Sehat dengan menerapkan konsep Polymorphism dan memperluas struktur Inheritance. 
+Tugas ini berfokus pada pembagian jenis produk jamu menjadi beberapa subclass untuk mencapai poin plus dan menunjukkan fleksibilitas kode.
+
+2. Implementasi Konsep PBO
+A. Dynamic Polymorphism (Method Overriding)
+Sesuai dengan Modul 5, polimorfisme dinamis diterapkan melalui teknik Method Overriding. 
+Konsep ini diimplementasikan pada method infoTambahan() yang dideklarasikan di parent class Jamu.
+- Parent Class (Jamu): Memiliki method infoTambahan() yang bersifat general.
+- Subclass (JamuCair & JamuBubuk): Melakukan override terhadap method tersebut untuk memberikan informasi spesifik mengenai jenis penyajian masing-masing jamu.
+
+B. Hierarchical Inheritance
+Sistem ini menggunakan dua jalur pewarisan yang logis:
+- Hirarki User: Class User diturunkan menjadi Admin dan Pelanggan.
+- Hirarki Jamu: Class Jamu diturunkan menjadi JamuCair dan JamuBubuk.
+
+C. Keuntungan Penerapan (Berdasarkan Modul)
+Code Reusability: Logika dasar manajemen stok dan harga cukup ditulis sekali di class Jamu.
+- Modularitas: Penambahan jenis jamu baru (misal: Jamu Tablet) dapat dilakukan tanpa merombak logika pada class Main.
+- Efisien: Objek subclass yang berbeda dapat dikelola secara seragam di dalam satu ArrayList<Jamu>.
+
+3. Struktur Class Program
+Class          Peran                          Keterangan
+User         Superclass     Menyimpan data autentikasi (ID, Nama, Username).
+Admin         Subclass           Memiliki akses manajemen data produk.
+Pelanggan     Subclass           Memiliki akses pemesanan dan pembayaran.
+Jamu         Superclass     Menyimpan atribut produk dan method dasar polimorfisme.
+JamuCair      Subclass           Implementasi jamu siap minum (Overriding).
+JamuBubuk     Subclass           Implementasi jamu seduh (Overriding).
+Main         Controller     Menjalankan alur program dan mengelola koleksi objek.
+
+4. Analisis Hasil Running
+Saat method lihatProdukJamu() dipanggil, program akan melakukan iterasi pada ArrayList<Jamu>. 
+Berkat polimorfisme dinamis, Java menentukan implementasi method infoTambahan() mana yang akan dijalankan berdasarkan tipe objek aslinya saat runtime.
+Sebagai contoh:
+- Objek JamuCair akan mencetak: "Jenis: Jamu Cair (Siap diminum)"
+- Objek JamuBubuk akan mencetak: "Jenis: Jamu Bubuk (Perlu diseduh)"
