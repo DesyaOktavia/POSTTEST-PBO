@@ -1,0 +1,20 @@
+Jamu Sehat - Sistem Pemesanan Jamu (Polymorphism Version)
+Sistem aplikasi Toko Jamu Sehat yang dikembangkan menggunakan bahasa pemrograman Java. 
+Versi ini berfokus pada implementasi Polymorphism (Statis dan Dinamis) sesuai dengan materi pada Modul 5 Praktikum PBO.
+
+A. Fitur Utama
+Autentikasi Multi-User: Login terpisah untuk Admin dan Pelanggan dengan sapaan yang dipersonalisasi.
+- Manajemen Stok: Fitur tambah stok produk dengan dukungan catatan transaksi.
+- Pemesanan & Pembayaran: Alur transaksi lengkap dari pemilihan produk hingga konfirmasi pembayaran.
+
+B. Implementasi Polymorphism (Modul 5)
+Proyek ini menerapkan:
+1. Static Polymorphism (Method Overloading)
+Terletak pada class Jamu.java, di mana method tambahStok memiliki dua bentuk:
+- tambahStok(int jumlah) : Digunakan untuk penambahan stok rutin.
+- tambahStok(int jumlah, String keterangan) : Digunakan untuk penambahan stok dengan informasi tambahan (misal: asal supplier).
+
+2. Dynamic Polymorphism (Method Overriding)
+Terletak pada hirarki class User, di mana method sapa() didefinisikan ulang pada subclass:
+- Subclass Admin: Melakukan override untuk menampilkan pesan sambutan formal tugas admin.
+- Subclass Pelanggan: Melakukan override untuk menampilkan sapaan ramah kepada pelanggan.
