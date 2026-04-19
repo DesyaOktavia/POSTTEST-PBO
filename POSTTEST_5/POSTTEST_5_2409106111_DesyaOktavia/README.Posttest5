@@ -1,0 +1,33 @@
+Laporan Praktikum Pemrograman Berorientasi Objek - Modul 6
+Nama: Desya Oktavia Rumondor 
+NIM: 2409106111
+Mata Kuliah: Pemrograman Berorientasi Objek  
+Topik: Implementasi Abstraction (Abstract Class & Interface) pada Sistem Toko Jamu Sehat
+
+1. Deskripsi Tugas
+Melanjutkan pengembangan proyek Toko Jamu Sehat dengan menerapkan konsep Abstraction. 
+Fokus utama pada tugas ini adalah mengubah struktur superclass menjadi lebih abstrak dan 
+mengimplementasikan kontrak kerja melalui interface untuk meningkatkan modularitas program.
+
+2. Implementasi Konsep Abstraction
+A. Abstract Class
+Sesuai dengan aturan Java pada Modul 6, class `User` dideklarasikan sebagai `abstract class`. 
+Hal ini dilakukan karena secara logika, `User` merupakan representasi umum dan tidak boleh diinstansiasi menjadi objek secara langsung. 
+Implementasi spesifik hanya ada pada class turunannya, yaitu `Admin` dan `Pelanggan`.
+
+B. Abstract Method
+Di dalam class `User`, diterapkan abstract method `sapa()`. 
+Method ini tidak memiliki *body* di superclass, sehingga memaksa setiap subclass untuk memberikan implementasi yang spesifik (Dynamic Polymorphism).
+`Admin` mengimplementasikan sapaan formal operasional.
+`Pelanggan` mengimplementasikan sapaan pelayanan konsumen.
+
+C. Interface
+Program kini dilengkapi dengan interface `LayananToko` sebagai kontrak yang mendefinisikan standar layanan bagi setiap aktor dalam sistem. 
+Terdapat dua method esensial di dalamnya:
+1. `tampilkanStatusSistem()`: Memberikan informasi status terkini.
+2. `tampilkanKontakBantuan()`: Menyediakan akses bantuan bagi pengguna.
+
+3. Analisis Program
+Penggunaan Abstract Class pada `User` memastikan keamanan desain koding, di mana tidak akan ada objek `User` yang "mengambang" tanpa peran yang jelas. 
+Sementara itu, penggunaan Interface `LayananToko` memungkinkan sistem untuk memiliki standar fungsi 
+yang sama meskipun diimplementasikan oleh class yang memiliki peran berbeda.
